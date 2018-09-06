@@ -16,7 +16,7 @@ Có rất nhiều thứ như: Scope, Closure, Callbacks, Prototype, và nhiều 
 
 Nhưng trước khi đi sâu vào các khái niệm này, ít nhất bạn nên hiểu cách hoạt động của công cụ Javascript.
 
-Trong bài này, chúng tôi sẽ giới thiệu hai phần cơ bản của mọi công cụ Javascript:Execution Context và the Call Stack.
+Trong bài này, chúng tôi sẽ giới thiệu hai phần cơ bản của mọi công cụ Javascript: Execution Context và the Call Stack.
 
 (Đừng sợ. Nó dễ hơn bạn nghĩ)
 
@@ -47,7 +47,7 @@ function pow(num) {
 }
 ```
 
-xong?
+xong chưa?
 
 Nó trông không khó nhỉ!
 
@@ -81,27 +81,27 @@ Tôi cá là bạn sẽ không làm thế.
 
 Nếu bạn muốn tạo ấn tượng tốt trong một cuộc phỏng vấn Javascript, ít nhất bạn nên biết cách Javascript chạy mã của bạn.
 
-(Và một loạt các thứ khác mà tôi sẽ không bao gồm ở đây).
+(Và một loạt các thứ khác mà tôi sẽ đề cập ở đây).
 
 Đừng vội vàng về những khái niệm này.
 
 Bạn không thể học mọi thứ trong một ngày. Nó sẽ tốn thời gian.
 
-Tin tốt đây? Tôi sẽ làm cho mọi thứ trở nên dễ hiểu đối với mọi người (ít nhất tôi sẽ thử).
+Tin tốt đây? Tôi sẽ làm cho mọi thứ trở nên dễ hiểu đối với mọi người (ít nhất tôi sẽ cố).
 
-Để hiểu cách Javascript chạy mã của bạn, chúng ta phải đáp ứng điều đáng sợ đầu tiên: Execution Contexti.
+Để hiểu cách Javascript chạy mã của bạn, chúng ta phải đáp ứng điều đáng sợ đầu tiên: Execution Context.
 
  Execution Context trong Javascript là gì?
 
-Mỗi khi bạn chạy Javascript trong một trình duyệt (hoặc trong Node), công cụ sẽ trải qua một loạt các bước.
+Mỗi khi bạn chạy Javascript trong một trình duyệt (hoặc trong Node), engine sẽ thực hiện một loạt các bước.
 
 Một trong những bước này liên quan đến việc tạo ra  Execution Context toàn cục.
 
-Nhưng chờ đã, động cơ là gì?
+Nhưng chờ đã, engine là gì?
 
 Đó là, công cụ Javascript là "động cơ" chạy mã Javascript.
 
-Ngày nay có hai công cụ Javascript nổi bật: Google V8 và SpiderMonkey.
+Ngày nay có hai Javascript engine nổi bật: Google V8 và SpiderMonkey.
 
 V8 là công cụ JavaScript mã nguồn mở của Google, được sử dụng trong Google Chrome và Node.js.
 
@@ -145,7 +145,7 @@ Nếu tôi hỏi lại bạn: trình duyệt "xem" mã sau đây như thế nào
 
 Ừ, nó là từ trên xuống nhưng…
 
-Như bạn có thể thấy động cơ không chạy chức năng pow!
+Như bạn có thể thấy engine không chạy chức năng pow!
 
 Đó là một khai báo hàm, không phải là một lời gọi hàm.
 
@@ -187,11 +187,11 @@ Mọi thứ có rõ ràng không?
 
 Nếu tôi là bạn vào thời điểm này, tôi sẽ:
 
-viết xuống một số mã Javascript
+viết lại một số mã Javascript
 
 phân tích cú pháp mã từng bước khi bạn là động cơ
 
-tạo một biểu diễn đồ họa của cả bối cảnh Global Execution và Global Memory trong quá trình thực hiện
+tạo một biểu đồ biểu diễn của cả bối cảnh Global Execution và Global Memory trong quá trình thực hiện
 
 Bạn có thể viết bài tập trên giấy hoặc bằng công cụ tạo mẫu.
 
@@ -258,13 +258,13 @@ Call Stack trong Javascript là gì?
 
 Call Stack giống như nhật ký thực hiện chương trình hiện tại.
 
-Trong thực tế nó là một cấu trúc dữ liệu: a stack.
+Trong thực tế nó là một cấu trúc dữ liệu: một stack.
 
 Call Stack chính xác hoạt động như thế nào?
 
 Không có gì đáng ngạc nhiên khi nó có hai phương pháp: push và pop.
 
-Đẩy là hành động đưa thứ gì đó vào ngăn xếp.
+Pushing là hành động đưa thứ gì đó vào ngăn xếp.
 
 Tức là, khi bạn chạy một hàm trong Javascript, công cụ sẽ đẩy hàm đó vào trong Call Stack
 
